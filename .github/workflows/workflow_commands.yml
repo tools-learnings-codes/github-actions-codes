@@ -14,6 +14,6 @@ jobs:
                 echo "this is the second line of error"
                 echo "third line of error"
                 echo "fourth line of error"
+                echo "::add-mask::{Himanshu}"
                 echo "::endgroup::" 
-                echo "::admask::{Himanshu}"
                 
