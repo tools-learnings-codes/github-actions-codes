@@ -1,0 +1,21 @@
+name: parallel checks
+on: [ push , workflow_dispatch ]
+jobs: 
+    shell-runner: 
+        runs-on: ubuntu-latest
+        steps: 
+            - run: | 
+                echo "$(whoami)"
+    
+    macos-job: 
+        runs-on: macos-latest
+        needs: shell-runner
+        steps: 
+            - run: echo $(whoami)
+    
+    windows-job: 
+        runs-on: windows-latest
+        needs: shell-runner 
+        steps: 
+            - run: echo "hello from windows"
+    
