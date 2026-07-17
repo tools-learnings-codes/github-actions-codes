@@ -20,6 +20,10 @@ jobs:
         runs-on: ubuntu-latest 
         steps: 
             - name: Simple js greet action
+              id: greet                                               # giving a unique id to identify it for further steps
               uses: actions/hello-world-javascript-action@main
               with: 
                 who-to-greet: Himanshu
+
+            - name: output from greet step
+              run: echo "${{ steps.greet.outputs.time }}"
