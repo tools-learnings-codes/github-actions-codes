@@ -6,8 +6,9 @@ on:
     workflow_run:      # to execute this based on someother workflow 
         workflows: [checkout & display]
         types: [completed]      
-        
-    workflow_call:  # to execute this workflow inside another workflow 
+        branches:                          # execute this workflow after the completion of checkout & display workflow only if its working on main branch 
+            - main 
+    # workflow_call:  # to execute this workflow inside another workflow 
 jobs:
     normal-printer: 
         if: github.event_name == 'workflow_run'

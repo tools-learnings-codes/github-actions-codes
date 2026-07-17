@@ -1,0 +1,10 @@
+name: Manually Triggered
+on: 
+    workflow_dispatch: 
+jobs: 
+    shell-commands: 
+        runs-on: ubuntu-latest
+        steps: 
+            - run: echo "this is running after manually clicked"
+    
+    

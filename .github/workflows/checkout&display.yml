@@ -2,6 +2,14 @@
 name: checkout & display
 on: 
     push: 
+        branches: 
+            - main
+            - "feat/*"   # matches feat/apple feat/banana , not match : feat/apple/banana
+            - "feat/**"  # matches feat/apple/banana 
+            - "!feat/featA"   # this workflow will not be trigged if this branch got a push -> basically this branch will be ignored 
+        # branches-ignore:    remember you cannot use branches and branches-ignore at the same time 
+
+        #     - develop 
     pull_request: 
         types: [opened , assigned , reopened , synchronize]    # activity types    # will trigger only when any of these event will occur 
     issues: 
