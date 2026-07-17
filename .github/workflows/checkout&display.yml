@@ -23,6 +23,8 @@ jobs:
 
     greeting-job: 
         runs-on: ubuntu-latest 
+        needs: 
+            - checkout-display-files
         steps: 
             - name: Simple js greet action
               id: greet                                               # giving a unique id to identify it for further steps
@@ -32,3 +34,11 @@ jobs:
 
             - name: output from greet step
               run: echo "${{ steps.greet.outputs.time }}"
+
+
+    # calling another workflow here in this workflow : remember that workflow should have workflow_call inside itself 
+
+    calling-workflow: 
+        needs: 
+            - greeting-job 
+        uses: ./.github/workflows/connecting-workflow.yml 

@@ -1,12 +1,19 @@
+# Remeber this connecting workflow will be started after the completion of the checkout and display workflow 
+# to trigger that we need to check the triggers of checkout and display workflow 
+# if that workflow stopped in between or didnt started then this will also not work 
 name: connecting workflow
 on: 
-    workflow_run: 
+    workflow_run:      # to execute this based on someother workflow 
         workflows: [checkout & display]
-        types: [completed]
+        types: [completed]      
+        
+    workflow_call:  # to execute this workflow inside another workflow 
 jobs:
     normal-printer: 
         runs-on: ubuntu-latest
         steps: 
             - run: echo "I was triggered because the 'checkout and display' workflow is completed"
 
+        
             
+        
