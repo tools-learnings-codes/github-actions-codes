@@ -1,6 +1,11 @@
 ## copying code from github into runner 
 name: checkout & display
-on: [push]
+on: 
+    # push: 
+    pull_request: 
+        types: [opened , assigned , reopened , synchronize]    # activity types    # will trigger only when any of these event will occur 
+    issues: 
+        types: [opened , closed , reopened , assigned , unassigned] 
 jobs: 
     checkout-display-files: 
         runs-on: ubuntu-latest 
