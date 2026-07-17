@@ -1,8 +1,9 @@
 name: Manually Triggered
 on: 
-    workflow_dispatch: 
+    workflow_dispatch:
 jobs: 
     shell-commands: 
+        if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
         steps: 
             - run: echo "this is running after manually clicked"
