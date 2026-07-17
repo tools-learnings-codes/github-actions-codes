@@ -1,6 +1,9 @@
 name: Manually Triggered
 on: 
     workflow_dispatch:
+    push: 
+        branches: 
+            - main 
 jobs: 
     shell-commands: 
         if: github.ref == 'refs/heads/main'
