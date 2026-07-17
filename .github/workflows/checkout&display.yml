@@ -39,6 +39,7 @@ jobs:
     # calling another workflow here in this workflow : remember that workflow should have workflow_call inside itself 
 
     calling-workflow: 
+        if: github.event_name == 'push'
         needs: 
             - greeting-job 
         uses: ./.github/workflows/connecting-workflow.yml 

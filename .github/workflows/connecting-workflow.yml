@@ -10,6 +10,7 @@ on:
     workflow_call:  # to execute this workflow inside another workflow 
 jobs:
     normal-printer: 
+        if: github.event_name == 'workflow_run'
         runs-on: ubuntu-latest
         steps: 
             - run: echo "I was triggered because the 'checkout and display' workflow is completed"
