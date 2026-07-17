@@ -1,0 +1,12 @@
+name: connecting workflow
+on: 
+    workflow_run: 
+        workflows: [checkout & display]
+        types: [completed]
+jobs:
+    normal-printer: 
+        runs-on: ubuntu-latest
+        steps: 
+            - run: echo "I was triggered because the 'checkout and display' workflow is completed"
+
+            

@@ -16,7 +16,7 @@ jobs:
             
     working-dir-info-windows: 
         runs-on: windows-latest
-        defaults: 
+        defaults:                         # by using this you can mention the specified shell to run your commands 
             run:
                 shell: pwsh
         steps: 
@@ -26,3 +26,8 @@ jobs:
                 echo $env:GITHUB_SHA
                 echo $env:GITHUB_REPOSITORY
                 echo $env:GITHUB_WORKSPACE
+
+            - name: python shell
+              run: |
+                import platform
+                print(platform.processor())s

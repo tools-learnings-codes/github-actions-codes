@@ -1,7 +1,7 @@
 ## copying code from github into runner 
 name: checkout & display
 on: 
-    # push: 
+    push: 
     pull_request: 
         types: [opened , assigned , reopened , synchronize]    # activity types    # will trigger only when any of these event will occur 
     issues: 
