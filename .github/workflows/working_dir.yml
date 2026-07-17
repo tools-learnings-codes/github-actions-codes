@@ -1,0 +1,24 @@
+name: working_dir workflow
+on: [push]
+jobs: 
+    working-dir-info: 
+        runs-on: ubuntu-latest
+        steps: 
+            - run: |
+                pwd 
+                ls -a 
+                echo $GITHUB_SHA
+                echo $GITHUB_REPOSITORY
+                echo $GITHUB_WORKSPACE
+    
+    
+            
+    working-dir-info-windows: 
+        runs-on: windows-latest
+        steps: 
+            - run: |
+                pwd 
+                ls -a 
+                echo $GITHUB_SHA
+                echo $GITHUB_REPOSITORY
+                echo $GITHUB_WORKSPACE
