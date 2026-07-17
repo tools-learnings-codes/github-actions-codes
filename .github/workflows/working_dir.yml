@@ -6,7 +6,8 @@ jobs:
         steps: 
             - run: |
                 pwd 
-                ls -a 
+                sudo apt install tree 
+                tree 
                 echo $GITHUB_SHA
                 echo $GITHUB_REPOSITORY
                 echo $GITHUB_WORKSPACE
@@ -18,7 +19,7 @@ jobs:
         steps: 
             - run: |
                 pwd 
-                ls -a 
+                dir /a
                 echo $GITHUB_SHA
                 echo $GITHUB_REPOSITORY
                 echo $GITHUB_WORKSPACE
