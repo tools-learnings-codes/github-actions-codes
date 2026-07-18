@@ -1,6 +1,23 @@
 name: Manually Triggered
 on: 
     workflow_dispatch: 
+        inputs: 
+            name: 
+                description: name of the owner
+                type: string
+                required: true 
+                default: "owner"
+
+            location: 
+                description: his/her location
+                type: choice 
+                default: "Delhi"
+                options: 
+                    - Mumbai
+                    - Bangalore
+                    - Nagpur
+                    - oddisha
+                    - sikkim
 jobs: 
     shell-commands: 
         runs-on: ubuntu-latest
@@ -8,4 +25,7 @@ jobs:
             - run: echo "this is running after manually clicked"
             - name: printing the ref name
               run: echo $GITHUB_REF
-    
+            - name: accessing the value of inputs 
+              run: | 
+                echo "Name: ${{ inputs.name }}"
+                echo "Location: ${{ inputs.location }}"
