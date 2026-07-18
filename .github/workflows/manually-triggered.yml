@@ -1,6 +1,8 @@
 name: Manually Triggered
 on: 
     workflow_dispatch: 
+        # values for these inputs gonna be passed while running this workflow 
+        # by using GUI also you can pass and by using CLI also - and for pass the inputs you can use -f inputName=value 
         inputs: 
             name: 
                 description: name of the owner
@@ -12,12 +14,17 @@ on:
                 description: his/her location
                 type: choice 
                 default: "Delhi"
+                required: true 
                 options: 
                     - Mumbai
                     - Bangalore
                     - Nagpur
                     - oddisha
+                    - Delhi
                     - sikkim
+
+            environment: 
+                required : true 
 jobs: 
     shell-commands: 
         runs-on: ubuntu-latest
