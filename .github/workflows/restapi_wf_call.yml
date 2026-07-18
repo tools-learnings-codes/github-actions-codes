@@ -26,8 +26,8 @@ jobs:
         steps: 
           - name: Accessing the values of input-vars 
             run: | 
-              echo: "Name : ${{ inputs.name }}" 
-              echo: "Location : ${{ inputs.location }}" 
-              echo: "Environment : ${{ inputs.environment }}" 
+              echo "Name : ${{ inputs.name }}" 
+              echo "Location : ${{ inputs.location }}" 
+              echo "Environment : ${{ inputs.environment }}" 
            
     
