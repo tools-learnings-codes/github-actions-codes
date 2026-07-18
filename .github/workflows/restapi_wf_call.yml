@@ -1,0 +1,33 @@
+name: Postman call wf
+on: 
+    workflow_dispatch:
+        inputs: 
+            name:
+                type: string 
+                description: Name of the user 
+                default: default-user 
+            location: 
+                type: choice
+                options: 
+                    - Delhi
+                    - Mumbai
+                    - Bangalore
+                    - Hyderabad
+                default: Delhi 
+            environment: 
+                type: string 
+                default: dev 
+
+
+             
+jobs:
+    printer:
+        runs-on: ubuntu-latest
+        steps: 
+          - name: Accessing the values of input-vars 
+            run: | 
+              echo: "Name : ${{ inputs.name }}" 
+              echo: "Location : ${{ inputs.location }}" 
+              echo: "Environment : ${{ inputs.environment }}" 
+           
+    
