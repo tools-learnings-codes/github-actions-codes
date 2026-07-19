@@ -3,6 +3,7 @@ on:
     schedule:
         - cron: "0 14 * * *"     # runs everyday at 2pm 
         - cron: "0/5 * * * *"   # for testing 
+    workflow_dispatch:
 jobs: 
     stale: 
         runs-on: ubuntu-latest 
